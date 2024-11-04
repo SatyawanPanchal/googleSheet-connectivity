@@ -3,9 +3,21 @@
 const MessageWindow = () => {
   return (
     <div className="message-window">
-
+ <textarea
+                value={textAreaValue}
+                onChange={handleChange}
+                rows="10" // Number of visible rows
+                cols="50" // Number of visible columns
+                placeholder="Type your text here..."
+            />
     <div className="given-message">
-         
+    <textarea
+                value={textAreaValue}
+                onChange={handleChange}
+                rows="10" // Number of visible rows
+                cols="50" // Number of visible columns
+                placeholder="Type your text here..."
+            />
     </div>
     <div className="write-message">
 
