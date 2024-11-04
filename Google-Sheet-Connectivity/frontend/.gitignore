@@ -14,6 +14,8 @@ dist-ssr
 .env
 curd-439402-98c6345a31dc.json
 
+ Google-Sheet-Connectivity\backend\curd-439402-98c6345a31dc.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
