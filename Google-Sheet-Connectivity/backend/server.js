@@ -4,8 +4,7 @@ require('dotenv').config();
 const { GOOGLE_APPLICATION_CREDENTIALS } = process.env;
 const { google } = require("googleapis");
  
-//const serviceAccountKeyFile = "./curd-439402-98c6345a31dc.json";
-//const sheetId = "1a1w34jKPym04TYuvOfw1U0-QDt_2dDQnym9yZbUAEkg";
+ 
 const tabName = "Users";
 const range = "A:M";
 
