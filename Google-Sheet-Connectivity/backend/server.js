@@ -1,7 +1,11 @@
-const { google } = require("googleapis");
 
-const serviceAccountKeyFile = "./curd-439402-98c6345a31dc.json";
-const sheetId = "1a1w34jKPym04TYuvOfw1U0-QDt_2dDQnym9yZbUAEkg";
+
+require('dotenv').config();
+const { GOOGLE_APPLICATION_CREDENTIALS } = process.env;
+const { google } = require("googleapis");
+ 
+//const serviceAccountKeyFile = "./curd-439402-98c6345a31dc.json";
+//const sheetId = "1a1w34jKPym04TYuvOfw1U0-QDt_2dDQnym9yZbUAEkg";
 const tabName = "Users";
 const range = "A:M";
 
@@ -15,7 +19,7 @@ async function main() {
   const googleSheetClient = await _getGoogleSheetClient();
 
   // Reading Google Sheet from a specific range
-  const data = await _readGoogleSheet(googleSheetClient, sheetId, tabName, range);
+  const data = await _readGoogleSheet(GOOGLE_APPLICATION_CREDENTIALS.googleSheetClient,GOOGLE_APPLICATION_CREDENTIALS.sheetId,GOOGLE_APPLICATION_CREDENTIALS.tabName,GOOGLE_APPLICATION_CREDENTIALS.range);
   console.log(data);
 
   // // Adding a new row to Google Sheet
@@ -29,7 +33,7 @@ async function main() {
 // get the client for google sheet access
 async function _getGoogleSheetClient() {
   const auth = new google.auth.GoogleAuth({
-    keyFile: serviceAccountKeyFile,
+    keyFile: GOOGLE_APPLICATION_CREDENTIALS,
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
   const authClient = await auth.getClient();

@@ -1,11 +1,11 @@
-import {google} from 'googleapis'
+import { google } from "googleapis";
+import emailjs from "@emailjs/browser";
 const serviceAccountKeyFile = "./curd-439402-98c6345a31dc.json";
 const sheetId = "1a1w34jKPym04TYuvOfw1U0-QDt_2dDQnym9yZbUAEkg";
 const tabName = "Users";
 const range = "A:M";
 
-const getDataFromTable = async (req, res) => 
-    {
+const getDataFromTable = async (req, res) => {
   console.log("request is properly sent now you can proce");
 
   main().then(() => {
@@ -24,13 +24,12 @@ const getDataFromTable = async (req, res) =>
         tabName,
         range
       );
-       //  console.log(dataFromTable);
+      //  console.log(dataFromTable);
       res.json({
-         dataFromTable,
+        dataFromTable,
         success: true,
         message: "data is recieved",
       });
-    
     } catch (error) {
       res.json({
         success: false,
@@ -61,5 +60,7 @@ const getDataFromTable = async (req, res) =>
     return res.data.values;
   }
 };
+
+
 
 export { getDataFromTable };

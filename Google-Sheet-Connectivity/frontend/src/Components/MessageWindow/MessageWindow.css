@@ -1,0 +1,13 @@
+.message-window {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.send-to {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}

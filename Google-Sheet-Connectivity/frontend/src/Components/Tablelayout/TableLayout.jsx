@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
  import { useState } from 'react';
 import './TableLayout.css'
+import MessageWindow from '../MessageWindow/MessageWindow';
+import EmailSender from '../emailSender/EmailSender';
 
 const TableLayout = ({ dataFromTable }) => {
   const[showMessageWindow,setShowMessageWindow]=useState(false)
@@ -34,7 +36,7 @@ const TableLayout = ({ dataFromTable }) => {
                 <td>{row.Dateofallotment}</td>
                 <td>{row.Dateofcompletion}</td>
                 <td>{row.LetterNodated}</td>
-                <td><button className='btn-status' onClick={handleButtonClick}>{row.Remarks}</button></td>
+                <td><button className='btn-status' onClick={()=>handleButtonClick()}>{row.Remarks}</button></td>
               </tr>
             ))}
           </tbody>
@@ -42,7 +44,7 @@ const TableLayout = ({ dataFromTable }) => {
       ) : (
         <h4>Fetching data.....</h4>
       )}
-      
+     {showMessageWindow&& <EmailSender/>}
     </div>
   );
 };
