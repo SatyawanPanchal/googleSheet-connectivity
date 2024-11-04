@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .env
+curd-439402-98c6345a31dc.json
 
 # Editor directories and files
 .vscode/*

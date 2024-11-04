@@ -1,7 +1,7 @@
 
 
 require('dotenv').config();
-const { GOOGLE_APPLICATION_CREDENTIALS } = process.env;
+const {GOOGLE_APPLICATION_CREDENTIALS}=process.env
 const { google } = require("googleapis");
  
  
@@ -18,7 +18,7 @@ async function main() {
   const googleSheetClient = await _getGoogleSheetClient();
 
   // Reading Google Sheet from a specific range
-  const data = await _readGoogleSheet(GOOGLE_APPLICATION_CREDENTIALS.googleSheetClient,GOOGLE_APPLICATION_CREDENTIALS.sheetId,GOOGLE_APPLICATION_CREDENTIALS.tabName,GOOGLE_APPLICATION_CREDENTIALS.range);
+  const data = await _readGoogleSheet(process.env.googleSheetClient,process.env.sheetId,tabName,range);
   console.log(data);
 
   // // Adding a new row to Google Sheet
